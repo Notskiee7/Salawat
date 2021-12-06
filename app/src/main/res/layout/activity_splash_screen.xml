@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".Activity_SplashScreen">
+    android:background="@color/white"
+    tools:context=".Activity_Splash_Screen">
 
-  <ImageView
-      android:id="@+id/IVlogo"
-      android:layout_width="236dp"
-      android:layout_height="238dp"
-      android:layout_marginTop="68dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@mipmap/Prayer_Logo_foreground" />
+    <ImageView
+        android:id="@+id/IVlogo"
+        android:layout_width="284dp"
+        android:layout_height="278dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/IVtext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/prayer_logo1_foreground" />
 
-  <ImageView
-      android:id="@+id/IVtext"
-      android:layout_width="308dp"
-      android:layout_height="162dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/IVlogo"
-      app:layout_constraintVertical_bias="0.244"
-      app:srcCompat="@mipmap/Prayer_Logo2_foreground" />
-
+    <ImageView
+        android:id="@+id/IVtext"
+        android:layout_width="264dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVlogo"
+        app:srcCompat="@mipmap/prayer_text_logo_foreground" />
 </android.support.constraint.ConstraintLayout>
