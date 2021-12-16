@@ -1,8 +1,11 @@
 package noor.eid.salawat;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,10 +13,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
     private FloatingActionButton FABmain;
@@ -53,8 +54,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
             builder.setMessage("Are you sure");
             builder.setCancelable(true);
             //listener 3. add Listener to the buttons
-           builder.setPositiveButton("Yes",this);
-           builder.setNegativeButton("No",this);
+            builder.setPositiveButton("YES", this);
+            builder.setNegativeButton("NO", this);
             AlertDialog dialog = builder.create();
             dialog.show();
 
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         if (which == dialogInterface.BUTTON_POSITIVE) {
             Toast.makeText(getApplicationContext(), "Loging out", Toast.LENGTH_SHORT).show();
             dialogInterface.cancel();
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+            auth.signOut();
             finish();//to close current activity
         }
 
@@ -76,4 +79,3 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         }
     }
 }
-
